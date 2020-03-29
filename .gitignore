@@ -1,0 +1,4 @@
+/node_modules
+/.idea
+blog/.vuepress/dist
+package-lock.json

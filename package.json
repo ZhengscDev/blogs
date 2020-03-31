@@ -3,19 +3,34 @@
   "version": "1.0.0",
   "description": "",
   "directories": {
-    "doc": "blog"
+    "doc": "docs"
   },
   "scripts": {
-    "docs:dev": "vuepress dev blog",
-    "docs:build": "vuepress build blog",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@vuepress/theme-blog": "^2.2.0",
+    "@vuepress-reco/vuepress-plugin-comments": "^1.0.13",
+    "@vuepress/plugin-back-to-top": "^1.4.0",
+    "@vuepress/plugin-blog": "^1.9.2",
+    "@vuepress/plugin-google-analytics": "^1.4.0",
+    "@vuepress/plugin-html-redirect": "^0.1.2",
+    "@vuepress/plugin-medium-zoom": "^1.4.0",
+    "lodash.shuffle": "^4.2.0",
+    "lodash.throttle": "^4.1.1",
     "vuepress": "^1.4.0",
+    "vuepress-plugin-cat": "^1.0.3",
+    "vuepress-plugin-code-copy": "^1.0.6",
+    "vuepress-plugin-comment": "^0.7.3",
+    "vuepress-plugin-dynamic-base": "^0.1.1",
+    "vuepress-plugin-feed": "^0.1.8",
+    "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-plugin-container": "^2.1.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
+  }
 }

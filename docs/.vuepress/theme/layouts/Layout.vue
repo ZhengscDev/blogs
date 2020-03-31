@@ -1,24 +1,8 @@
 <template>
   <ParentLayout>
-    <!--<CarbonAds slot="sidebar-top"/>-->
     <div slot="page-top">
       <slot name="page-top"></slot>
     </div>
-    
-<!--    <div class="custom-page-bottom" slot="page-bottom">-->
-      <!--<div slot="page-top">-->
-        <!--<div class="sherry-edit-links">-->
-          <!--<a class="yuque-link" target="_blank" :href="editLink">-->
-            <!--<EditIcon/>-->
-            <!--编辑此文档</a>-->
-          <!--<a class="yuque-link" target="_blank" href="https://yuque.antfin-inc.com/sherry/topics/new?label_ids=28874">-->
-            <!--<FeedbackIcon/>-->
-            <!--反馈该文档</a>-->
-        <!--</div>-->
-      <!--</div>-->
-<!--      <Comments />-->
-<!--      <slot name="page-bottom"></slot>-->
-<!--    </div>-->
   </ParentLayout>
 </template>
 

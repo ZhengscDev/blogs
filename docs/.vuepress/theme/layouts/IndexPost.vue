@@ -26,6 +26,8 @@
 
     computed: {
       pages() {
+
+        console.log('$pagination:',this.$pagination)
         return this.$pagination.pages
           .filter(page => {
             return page.frontmatter && page.frontmatter.date

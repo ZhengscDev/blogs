@@ -18,6 +18,7 @@
 
     computed: {
       apage() {
+        console.log('--->>>',this.page);
         return this.page || {
           title: '',
           frontmatter: {}

@@ -1,30 +1,27 @@
 <template>
-    <header class="navbar">
+    <header class="cust-navbar">
         <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')"/>
 
         <router-link
                 :to="$localePath"
                 class="home-link">
             <img
-                v-if="$themeConfig.logo"
-                class="logo"
-                :src="$themeConfig.logo"
-                :alt="$siteTitle">
+                    v-if="$themeConfig.logo"
+                    class="logo"
+                    :src="$themeConfig.logo"
+                    :alt="$siteTitle">
 
             <img class="logo2" src="../../public/title_20200331141723.png" alt="title"/>
         </router-link>
         <div
             class="links"
-            :style="linksWrapMaxWidth ? {
-                'max-width': linksWrapMaxWidth + 'px'
-            } : {}">
+            :style="linksWrapMaxWidth ? {'max-width': linksWrapMaxWidth + 'px'} : {}">
             <NavLinks class="can-hide"/>
             <AlgoliaSearchBox
                 v-if="isAlgoliaSearch"
                 :options="algolia"
             />
             <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"/>
-
         </div>
     </header>
 </template>
@@ -80,59 +77,123 @@
 </script>
 
 <style lang="stylus">
-    $navbar-vertical-padding = 0.7rem
+    $navbar-vertical-padding = .7rem
     $navbar-horizontal-padding = 1.5rem
+    $navbar-line-bottom = -115%
 
-    .navbar
+    .cust-navbar {
+        box-sizing border-box
+        background-color white
         padding $navbar-vertical-padding $navbar-horizontal-padding
-        line-height $navbarHeight - 1.4rem
+        position fixed
+        top 0
+        left 0
+        z-index 12
+        right 0
+        width: 100vw;
+        box-shadow 0px 0px 15px 0px rgba(132, 132, 132, 0.2) !important;
+        transition: padding-left,display .5s cubic-bezier(.25, .8, .25, 1);
 
-        a, span, img
-            display inline-block
-        .logo
-            height $navbarHeight - $navbar-vertical-padding * 2 + 0.5rem
-            min-width $navbarHeight - 1.4rem
-            margin-top -0.2rem
-            margin-left -0.5rem
-            margin-right 0.8rem
-            vertical-align top
-        .logo2
-            height $navbarHeight - $navbar-vertical-padding * 2 + 0.5rem - 1rem
-            min-width $navbarHeight - 1.4rem
-            margin-right 0.8rem
-            margin-left -.5rem
-            vertical-align middle
-        .site-name
-            font-size 1.3rem
-            font-weight 600
-            color $textColor
-            position relative
+        .home-link {
+            display flex
+            flex-direction row
+            align-items center
 
-        .links
-            padding-left 1.5rem
-            box-sizing border-box
-            background-color white
-            white-space nowrap
-            font-size 1.2rem
+            .logo {
+                height 2.5rem
+                margin-right .8rem
+            }
+
+            .logo2 {
+                height 1.5rem
+            }
+        }
+
+        .links {
+            padding-left 1.5rem;
+            box-sizing border-box;
+            /*background-color white*/
+            white-space nowrap;
+            font-size 1.2rem;
             /*font-style italic*/
             position absolute
             right $navbar-horizontal-padding
-            top $navbar-vertical-padding
+            top 50%
+            transform translateY(-50%)
             display flex
             align-items center
 
-            .search-box
-                flex: 0 0 auto
-                vertical-align top
-                margin-left 1rem
-                margin-right 0!important
+            .nav-links {
+                a {
+                    white-space: nowrap;
+                    position: relative;
+                    border none !important;
+                    color: $colorInactive
+                    font-family PT Serif,Serif;
+                }
+                a.router-link-active {
+                    color: #000;
+
+                    &:after {
+                        content: "";
+                        height 1px;
+                        left 50%;
+                        transform translateX(-50%);
+                        width 100%;
+                        position: absolute;
+                        bottom $navbar-line-bottom;
+                        transition background-color 0.2s;
+                        background-color: lighten(#000, 50%);
+                    }
+                }
+                a:hover {
+                    /*text-decoration: none !important;*/
+                    color: #000;
+                    &:after {
+                        background-color: $colorDark;
+                    }
+                }
+            }
+
+            .search-box {
+                margin-left 2rem
+                margin-right 0 !important
+                input {
+                    background: #fff url(https://gw.alipayobjects.com/zos/bmw-prod/72262c89-1d96-442d-bdcf-e4e50d10bd42.svg) 0.1rem 0.4rem no-repeat;
+                    background-size: 1.2rem;
+                    -webkit-appearance: none;
+                    border-radius 0
+                    border-style: solid;
+                    border-style: unset;
+                    border-bottom: .5px solid lighten($colorInactive, 80%);
+                    transition all 0.3s;
+
+                    &.focused {
+                        border-bottom: .5px solid lighten($colorInactive, 20%);
+                    }
+                }
+            }
+        }
+    }
 
     @media (max-width: $MQMobile)
-        .navbar
+        .cust-navbar
             padding-left 4rem
 
             .can-hide
                 display none
-            .links
+
+            .links {
                 padding-left 1.5rem
+            }
+
+            .search-box {
+                input {
+                    border-bottom 0 solid transparent !important
+                }
+
+                input.focused {
+                    border-bottom .05rem solid #272727 !important
+                }
+            }
 </style>

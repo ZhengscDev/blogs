@@ -65,8 +65,8 @@
         overflow: hidden;
         background-attachment: fixed;
         @media (max-width: $MQMobile) {
-            background-size: 300% auto;
-            background-position: 10% 0%;
+            background-size: cover;
+            background-position: center;
             overflow: hidden;
             background-attachment: fixed;
         }

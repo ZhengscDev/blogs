@@ -1,14 +1,20 @@
 ---
 sidebar: auto
 date: 2020-3-27
-author: ulivz
+tags: 
+  - JavaScript
+  - DOM
+author: ulivz111
 revisor: jothy1023
 type: translation
-hero: /sddefault.jpg
-description: Webpack 5 新特性 —— Module Federation, 让 JavaScript 应用得以在客户端或服务器上动态运行另一个 bundle 或者 build 的代码。
+summary: Webpack 5 新特性 —— Module Federation, 让 JavaScript 应用得以在客户端或服务器上动态运行另一个 bundle 或者 build 的代码。
 ---
 
 # Webpack 5 Module Federation: JavaScript 架构的变革者
+
+::: tip
+测试
+:::
 
 Module Federation <code style="font-family: Arail"><i>[ˌfedəˈreɪʃn]</i></code> 使 JavaScript 应用得以在客户端或服务器上动态运行另一个 bundle 或者 build 的代码。
 
@@ -51,7 +57,7 @@ Module Federation 使 JavaScript 应用得以从另一个 JavaScript 应用中�
 如果你想更好地理解这篇文章，欢迎阅读[Jack Herrington](https://medium.com/@jherr) 写的文章!
 
 <p align="center">
-  <iframe width="100%" height="315" src="https://www.youtube.com/embed/D3XYAx30CNc" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="100%" height="315" src="https://www.antdv.com/components/button-cn/" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
 <Highlight>

@@ -12,7 +12,7 @@
           target="_blank"
         >
           <img
-            :src="$withBase(`/authors/${author.person}.png`)"
+            src="http://img14.360buyimg.com/ee/jfs/t1/7092/17/2002/12001/5bd12a07E4f5495c1/32472c5783faf459.png"
             :alt="author.person"
           >
         </a>

@@ -2,8 +2,7 @@
   <ParentLayout>
     <template slot="page-top">
       <div class="blog-layout">
-        <BlogBlockLayout :pages="pages"/>
-        <BlogSimpleLayout :pages="pages"/>
+        <BaseListLayout/>
       </div>
       <Pagination v-if="$pagination.length > 1"/>
     </template>
@@ -26,8 +25,6 @@
 
     computed: {
       pages() {
-
-        console.log('$pagination:',this.$pagination)
         return this.$pagination.pages
           .filter(page => {
             return page.frontmatter && page.frontmatter.date
@@ -48,8 +45,8 @@
   $semiCollapse = $collapse/ 2
   
   .blog-layout {
-    padding-top 60px
-    max-width 1024px
+    padding 120px 15px 80px
+    max-width 740px
     margin 0 auto
   }
   

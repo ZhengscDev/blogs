@@ -2,7 +2,7 @@
 sidebar: auto
 title: 引用github仓库的star方式
 author: ZhengscDev
-description: 玄寂结合他在蚂蚁多年的构建基础技术的思考，及当下的机遇和挑战，慢慢推演到如何实现 Gravity 这个跑在浏览器中的构建工具
+summary: 玄寂结合他在蚂蚁多年的构建基础技术的思考，及当下的机遇和挑战，慢慢推演到如何实现 Gravity 这个跑在浏览器中的构建工具
 ---
 #  引用github仓库的star方式
 

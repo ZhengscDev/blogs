@@ -50,10 +50,10 @@ module.exports = {
       },
       {
         text: '爱好',
-        link: '/translations/'
+        link: '/hobby/'
       },
       {
-        text: '关于',
+        text: '关于我',
         link: '/about/'
       },
       {
@@ -79,7 +79,12 @@ module.exports = {
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
   plugins: [
-    'code-copy',
+    ['code-copy',{
+      selector:'div[class*="language-"]',
+      color:'#ffffff',
+      backgroundTransition:false,
+      successText:'复制成功!'
+    }],
     // ref: https://github.com/webmasterish/vuepress-plugin-feed
     ['feed', {
       canonical_base: 'https://richlab.design/',
@@ -90,7 +95,7 @@ module.exports = {
       },
       posts_directories: [
         '/blog/_posts',
-        '/translations/_posts'
+        '/hobby/_posts'
       ]
     }],
     ['@vuepress/google-analytics', {
@@ -111,25 +116,12 @@ module.exports = {
       }
     }],
     [
-      'dynamic-base',
-      {
-        publicPath: process.env.NETLIFY_CI
-          ? null
-          : 'https://richlab.oss-cn-hangzhou.aliyuncs.com/',
-
-        routeBash: {
-          'richlab.design': '/',
-          'rich-lab.github.io': '/blog/',
-        }
-      }
-    ],
-    [
       '@vuepress/blog',
       {
         directories: [
           {
             // Unique ID of current classification
-            id: 'post',
+            id: 'blog',
             // Target directory
             dirname: 'blog/_posts',
             // Path of the `entry page` (or `list page`)
@@ -142,12 +134,12 @@ module.exports = {
           },
           {
             // Unique ID of current classification
-            id: 'translations',
+            id: 'hobby',
             // Target directory
-            dirname: 'translations/_posts',
+            dirname: 'hobby/_posts',
             // Path of the `entry page` (or `list page`)
-            path: '/translations/',
-            itemPermalink: '/translations/:year/:month/:day/:slug',
+            path: '/hobby/',
+            itemPermalink: '/hobby/:year/:month/:day/:slug',
             // layout: 'Layout',
             pagination: {
               lengthPerPage: 20,

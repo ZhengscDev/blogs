@@ -31,6 +31,8 @@
     "vuepress-plugin-container": "^2.1.2"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0"
+    "babel-runtime": "^6.26.0",
+    "dayjs": "^1.8.23",
+    "vue-feather-icons": "^5.0.0"
   }
 }

@@ -14,12 +14,12 @@
             <img class="logo2" src="../../public/title_20200331141723.png" alt="title"/>
         </router-link>
         <div
-            class="links"
-            :style="linksWrapMaxWidth ? {'max-width': linksWrapMaxWidth + 'px'} : {}">
+                class="links"
+                :style="linksWrapMaxWidth ? {'max-width': linksWrapMaxWidth + 'px'} : {}">
             <NavLinks class="can-hide"/>
             <AlgoliaSearchBox
-                v-if="isAlgoliaSearch"
-                :options="algolia"
+                    v-if="isAlgoliaSearch"
+                    :options="algolia"
             />
             <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"/>
         </div>
@@ -92,7 +92,7 @@
         right 0
         width: 100vw;
         box-shadow 0px 0px 15px 0px rgba(132, 132, 132, 0.2) !important;
-        transition: padding-left,display .5s cubic-bezier(.25, .8, .25, 1);
+        transition: padding-left, display .5s cubic-bezier(.25, .8, .25, 1);
 
         .home-link {
             display flex
@@ -128,9 +128,11 @@
                     white-space: nowrap;
                     position: relative;
                     border none !important;
+                    font-weight bold
                     color: $colorInactive
-                    font-family PT Serif,Serif;
+                    font-family PT Serif, Serif;
                 }
+
                 a.router-link-active {
                     color: #000;
 
@@ -146,9 +148,11 @@
                         background-color: lighten(#000, 50%);
                     }
                 }
+
                 a:hover {
-                    /*text-decoration: none !important;*/
+                    text-decoration: none !important;
                     color: #000;
+
                     &:after {
                         background-color: $colorDark;
                     }
@@ -158,6 +162,7 @@
             .search-box {
                 margin-left 2rem
                 margin-right 0 !important
+
                 input {
                     background: #fff url(https://gw.alipayobjects.com/zos/bmw-prod/72262c89-1d96-442d-bdcf-e4e50d10bd42.svg) 0.1rem 0.4rem no-repeat;
                     background-size: 1.2rem;
@@ -172,11 +177,34 @@
                         border-bottom: .5px solid lighten($colorInactive, 20%);
                     }
                 }
+
+
+                ul.suggestions {
+                    position fixed
+                    right 0
+
+                    a {
+                        font-size 14px
+                        color #111111
+                    }
+                }
             }
         }
     }
 
     @media (max-width: $MQMobile)
+        .sidebar {
+            .nav-links {
+                a {
+                    color: $colorInactive
+                    white-space: nowrap;
+                }
+
+                a.router-link-active {
+                    color: #000 !important;
+                }
+            }
+        }
         .cust-navbar
             padding-left 4rem
 

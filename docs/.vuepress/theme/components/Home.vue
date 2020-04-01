@@ -69,6 +69,7 @@
             background-position: center;
             overflow: hidden;
             background-attachment: fixed;
+            background-image url("../../public/IMG_4136.jpg");
         }
     }
 

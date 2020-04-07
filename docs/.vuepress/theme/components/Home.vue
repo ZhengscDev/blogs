@@ -103,7 +103,7 @@
             margin-top: 30%;
 
             @media (max-width: $MQMobile) {
-                margin-top: 86%;
+                /*margin-top: 86%;*/
             }
         }
 

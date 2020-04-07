@@ -77,14 +77,13 @@
 </script>
 
 <style lang="stylus">
-    $navbar-vertical-padding = .7rem
-    $navbar-horizontal-padding = 1.5rem
-    $navbar-line-bottom = -115%
+    $navbar-height = 3.75rem
 
     .cust-navbar {
         box-sizing border-box
         background-color white
-        padding $navbar-vertical-padding $navbar-horizontal-padding
+        height $navbar-height
+        line-height $navbar-height
         position fixed
         top 0
         left 0
@@ -95,16 +94,18 @@
         transition: padding-left, display .5s cubic-bezier(.25, .8, .25, 1);
 
         .home-link {
-            display flex
-            flex-direction row
-            align-items center
+            margin-left 1.2rem
+            display inline-block
+            height $navbar-height
 
             .logo {
+                vertical-align middle
                 height 2.5rem
                 margin-right .8rem
             }
 
             .logo2 {
+                vertical-align middle
                 height 1.5rem
             }
         }
@@ -112,12 +113,10 @@
         .links {
             padding-left 1.5rem;
             box-sizing border-box;
-            /*background-color white*/
             white-space nowrap;
             font-size 1.2rem;
-            /*font-style italic*/
             position absolute
-            right $navbar-horizontal-padding
+            right 1.5rem
             top 50%
             transform translateY(-50%)
             display flex
@@ -125,9 +124,11 @@
 
             .nav-links {
                 a {
+                    display block
                     white-space: nowrap;
                     position: relative;
                     border none !important;
+                    line-height $navbar-height
                     font-weight bold
                     color: $colorInactive
                     font-family PT Serif, Serif;
@@ -143,7 +144,7 @@
                         transform translateX(-50%);
                         width 100%;
                         position: absolute;
-                        bottom $navbar-line-bottom;
+                        bottom -1px;
                         transition background-color 0.2s;
                         background-color: lighten(#000, 50%);
                     }
@@ -207,6 +208,10 @@
         }
         .cust-navbar
             padding-left 4rem
+
+            .home-link{
+                margin-left 0
+            }
 
             .can-hide
                 display none

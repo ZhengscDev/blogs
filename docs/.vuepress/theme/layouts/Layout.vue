@@ -46,7 +46,7 @@
     methods: {
       ...PageEdit.methods,
     },
-    
+
     mounted() {
       scrollSidebarLinkIntoView()
     },
@@ -62,31 +62,31 @@
     max-width 740px
     margin 0 auto
     padding 0 2.5rem
-  
+
   .sherry-edit-links
     text-align center
     margin-bottom 30px
     font-size 0
-  
-  .yuque-link
-    font-size 14px
-    border 1px solid #333
-    padding 5px 10px
-    color #333
-    border-radius 5px
-    font-weight 200
-    text-decoration none
-    
-    &:first-child
-      border-right 0
-      border-top-right-radius 0
-      border-bottom-right-radius 0
-    
-    &:nth-child(2)
-      border-top-left-radius 0
-      border-bottom-left-radius 0
-    
-    svg
-      line-height 20px
-      vertical-align text-bottom
+
+  /*.yuque-link*/
+  /*  font-size 14px*/
+  /*  border 1px solid #333*/
+  /*  padding 5px 10px*/
+  /*  color #333*/
+  /*  border-radius 5px*/
+  /*  font-weight 200*/
+  /*  text-decoration none*/
+  /*  */
+  /*  &:first-child*/
+  /*    border-right 0*/
+  /*    border-top-right-radius 0*/
+  /*    border-bottom-right-radius 0*/
+  /*  */
+  /*  &:nth-child(2)*/
+  /*    border-top-left-radius 0*/
+  /*    border-bottom-left-radius 0*/
+  /*  */
+  /*  svg*/
+  /*    line-height 20px*/
+  /*    vertical-align text-bottom*/
 </style>
